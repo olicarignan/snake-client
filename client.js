@@ -12,6 +12,10 @@ const connect = function() {
     console.log('connection successful');
     conn.write('Name: oli');
   });
+  
+  // conn.write('Move: up')
+  
+  
 
 
   conn.on('data', () => {
@@ -21,4 +25,8 @@ const connect = function() {
   return conn;
 }
 
-module.exports = connect;
+let exporting = {
+  connect
+};
+
+module.exports = exporting;
