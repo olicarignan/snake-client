@@ -15,7 +15,7 @@ const setupInput = function(conn) {
 }
 
 const handleUserInput = function(data) {
-  let output = '';
+  let output;
   if (data === '\u0003') {
     process.exit();
   }
@@ -33,9 +33,9 @@ const handleUserInput = function(data) {
   connection.write(output);
 }
 
-let exporting = {
+let exportSetupInput = {
   setupInput
 };
 
 console.log('Connecting ...')
-module.exports = exporting;
+module.exports = exportSetupInput;

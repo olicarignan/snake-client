@@ -1,11 +1,8 @@
 const net = require('net');
+const { IP, PORT } = require('./constant');
 
 const connect = function() {
-  const conn = net.createConnection({ 
-    host: '192.168.0.103',
-    port: 50541
-  });
-  // interpret incoming data as text
+  const conn = net.createConnection({ IP, PORT });
   conn.setEncoding('utf8'); 
 
   conn.on('connect', () => {
@@ -25,8 +22,8 @@ const connect = function() {
   return conn;
 }
 
-let exporting = {
+let exportConnect = {
   connect
 };
 
-module.exports = exporting;
+module.exports = exportConnect;
